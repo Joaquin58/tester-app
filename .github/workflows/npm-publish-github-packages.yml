@@ -4,34 +4,37 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: master
+  pull_request:
+    branches: master
 
+defaults:
+  run:
+   working-directory: ./api
+  
 jobs:
-  build:
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
+    
     permissions:
-      contents: read
-      packages: write
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+      
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - name: Clone eepository
+        uses: actions/checkout@v4
+       
+      - name: install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
+          node-version: lts/*
+      - name: Install step
+        run: "npm install --omit=dev-"
+        
+      - name: Build Step
+        run: npm run start
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           API_KEY: ${{secrets.API_KEY}}
