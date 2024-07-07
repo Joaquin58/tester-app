@@ -9,6 +9,7 @@ const putgame = require('../controllers/putgame.js')
 const deletegame = require('../controllers/deletegame.js')
 const filtandorder = require('../controllers/filtandorder.js')
 const seccuential = require('../controllers/seccuential.js');
+const testenviroments = require("../controllers/testenvirometns.js")
 
 
 // Importar todos los routers;
@@ -19,6 +20,7 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
+router.get("/", testenviroments)
 
 router.get('/videogames', allgames)
 
