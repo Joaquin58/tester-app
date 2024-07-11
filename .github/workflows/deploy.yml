@@ -33,9 +33,7 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: |
-          ls -l
-          "npm i --omit=dev"
+        run: npm i --omit=dev
           
       - run: |
           touch .env 
