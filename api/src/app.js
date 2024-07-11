@@ -5,7 +5,7 @@ import morgan from 'morgan'
 import routes from './routes/routes.js'
 import compression from "compression"
 import "./db.js"
-import cors from "cors"
+import cors from "../node_modules/cors/lib/index.js"
 
 const server = express();
 
