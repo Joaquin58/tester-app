@@ -34,7 +34,7 @@ jobs:
 
       - name: Install step
         run: |
-          cd api/
+          ls -l
           "npm i --omit=dev"
           
       - run: |
