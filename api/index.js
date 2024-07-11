@@ -17,7 +17,8 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const server = require('./src/app.js');
+import server from "./src/app.js"
+// const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 conn.sync({ force: true }).then(() => {
