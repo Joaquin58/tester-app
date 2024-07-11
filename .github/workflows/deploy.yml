@@ -4,10 +4,6 @@ on:
     branches: main
   pull_request:
     branches: main
-    
-defaults:
-  run:
-   working-directory: ./api
 
 jobs:
   deploy:
@@ -33,16 +29,11 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: npm i --omit=dev
-        
-      - run: |
-          touch .env 
-          echo "${{ secrets.PROD_ENV_FILE }}" > .env
-          
+        run: "npm i --omit=dev"
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "joaquinramr-tester-app-40"
           entrypoint: "api/index.js"
           root: "/api"
-         
