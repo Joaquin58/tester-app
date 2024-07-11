@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import routes from './routes/routes.js'
-import compression from "compression"
+import compression from "../node_modules/compression/index.js"
 import "./db.js"
 import cors from "../node_modules/cors/lib/index.js"
 
