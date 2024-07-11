@@ -1,7 +1,8 @@
-const axios = require('axios')
-const { API_KEY } = process.env
-const reducedata = require('./reducedata')
+import axios from 'axios'
+import reducedata from './reducedata.js'
+
 const ENDPAPI1 = 'https://api.rawg.io/api/games?key='
+const { API_KEY } = process.env
 
 let pagesnums = [1, 2, 3, 4, 5]
 let allgames = []
@@ -18,8 +19,7 @@ async function getallparallel() {
         const results = await getGamepage(num)
         allgames = [...allgames, ...results]
     }, Promise.resolve())
-    console.log('todos listos')
-
+    
     return allgames
 }
 async function secforloop() {
@@ -27,12 +27,10 @@ async function secforloop() {
     for (let nums of pagesnums) {
         const data = await getGamepage(nums)
         allgames = [...allgames, ...data]
-        console.log(data)
     }
-    console.log('all right')
     return allgames
 }
-module.exports = {
+export {
     getallparallel,
     secforloop
 }

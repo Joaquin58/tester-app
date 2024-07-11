@@ -1,5 +1,7 @@
-const { Videogame, Genre } = require('../db')
-const reducedata = require('./reducedata')
+import database from '../db.js'
+import reducedata from './reducedata.js'
+
+const { Videogame, Genre } = database
 
 const traertodoBd = async () => {
     const allrequestBd = await Videogame.findAll({
@@ -14,6 +16,4 @@ const traertodoBd = async () => {
     return reducedata(allrequestBd)
 }
 
-module.exports = {
-    traertodoBd
-}
+export default traertodoBd

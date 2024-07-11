@@ -1,6 +1,8 @@
-const { Videogame } = require('../db')
+import database from '../db.js'
+const { Videogame } = database
+
 const destroygame = async (id) => {
     await Videogame.destroy({ where: { id } })
 }
 
-module.exports = destroygame
+export default destroygame

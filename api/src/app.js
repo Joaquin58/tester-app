@@ -1,16 +1,13 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const routes = require('./routes/routes.js');
-const compression = require("compression")
-
-require('./db.js');
+import express from "express"
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser'
+import morgan from 'morgan'
+import routes from './routes/routes.js'
+import compression from "compression"
+import "./db.js"
+import cors from 'cors'
 
 const server = express();
-const cors = require('cors')
-
-server.name = 'API';
 
 server.use(cors())
 server.use(compression())
@@ -36,4 +33,3 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(status).send(message);
 });
 export default server
-// module.exports = server;

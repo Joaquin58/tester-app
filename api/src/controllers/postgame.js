@@ -1,4 +1,5 @@
-const postVideogame = require('../middlewares/postVideogame')
+import postVideogame from '../middlewares/postVideogame.js'
+
 const postgame = async (req, res) => {
     const { genresid } = req.body
     try {
@@ -22,4 +23,4 @@ const postgame = async (req, res) => {
     }
 }
 
-module.exports = postgame
+export default postgame

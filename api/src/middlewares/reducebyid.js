@@ -11,4 +11,4 @@ function reducebyid(Obj) {
     }
 }
 
-module.exports=reducebyid
+export default reducebyid

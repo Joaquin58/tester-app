@@ -4,4 +4,4 @@ function filter(filt, allVideogames) {
         : allVideogames.filter(el => el.genres.includes(filt))
     return genresfilter
 }
-module.exports = filter
+export default filter

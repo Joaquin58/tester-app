@@ -1,4 +1,6 @@
-const { Videogame } = require('../db')
+import * as tables from "../db.js"
+
+const { Videogame } = tables.default
 const updategame = async (id, params, genresid) => {
     try {
         await Videogame.update(params, {
@@ -16,4 +18,4 @@ const updategame = async (id, params, genresid) => {
 
 }
 
-module.exports = updategame
+export default updategame

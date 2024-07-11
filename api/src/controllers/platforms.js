@@ -1,4 +1,4 @@
-const reducePlatfomr = require('../middlewares/reduceplatforms.js')
+import reducePlatfomr from '../middlewares/reduceplatforms.js'
 const platforms = async (req, res) => {
     try {
         res.status(200).json(await reducePlatfomr())
@@ -7,4 +7,4 @@ const platforms = async (req, res) => {
     }
 }
 
-module.exports = platforms
+export default platforms

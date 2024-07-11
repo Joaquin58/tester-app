@@ -24,4 +24,4 @@ function orderbyname(orden, all) {
     return nameorder
 }
 
-module.exports = orderbyname
+export default orderbyname

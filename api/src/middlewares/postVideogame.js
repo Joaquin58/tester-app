@@ -1,4 +1,7 @@
-const { Videogame } = require('../db')
+import * as tables from "../db.js"
+
+const { Videogame } = tables.default
+
 const postgame = async (body) => {
     const { name, description, released, rating, platforms, image } = body
     const game = await Videogame.findOrCreate({
@@ -14,4 +17,4 @@ const postgame = async (body) => {
     return game
 }
 
-module.exports = postgame
+export default postgame

@@ -11,4 +11,4 @@ const reducedata = (array) => {
     })
 }
 
-module.exports = reducedata
+export default reducedata

@@ -1,8 +1,8 @@
-const { traertodoBd } = require('./allgames_DB.js')
-const { getByName, getByNameDb } = require('./getByName')
-const filter = require('./filtros')
-const orderbyname = require('./ordenamiento')
-const parallel = require('./allgames_API.js')
+import traertodoBd from './allgames_DB.js'
+import { getByName, getByNameDb } from './getByName.js'
+import filter from './filtros.js'
+import orderbyname from './ordenamiento.js'
+import parallel from './allgames_API.js'
 const filterexist = async (status) => {
 
     return status === 'Exist'
@@ -37,7 +37,7 @@ const filterexistbyname = async (status, name) => {
         ? await getByNameDb(name)
         : [...await getByNameDb(name), ...await getByName(name)].slice(0, 15)
 }
-module.exports = {
+export {
     filterexist,
     filterbygenres,
     orderbyalfabet,

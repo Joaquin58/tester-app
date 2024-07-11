@@ -1,8 +1,11 @@
-const axios = require('axios')
-const getGameById = require('../middlewares/getGameById')
-const reducebyid = require('../middlewares/reducebyid')
+import axios from 'axios'
+import getGameById from '../middlewares/getGameById.js'
+import reducebyid from '../middlewares/reducebyid.js'
+
 const ENDPAPI4 = 'https://api.rawg.io/api/games/'
+
 const { API_KEY } = process.env
+
 const getById = async (req, res) => {
     const { id } = req.params
     try {
@@ -19,4 +22,4 @@ const getById = async (req, res) => {
     }
 }
 
-module.exports = getById
+export default getById

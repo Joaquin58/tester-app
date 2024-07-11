@@ -1,7 +1,9 @@
-const axios = require('axios')
-const { Op } = require('sequelize')
-const { Videogame, Genre } = require('../db')
-const reducedata = require('./reducedata')
+import axios from 'axios'
+import { Op } from 'sequelize'
+import database from '../db.js'
+import reducedata from './reducedata.js'
+
+const { Videogame, Genre } = database
 const { API_KEY } = process.env
 const ENDPAPI2 = 'https://api.rawg.io/api/games?search='
 
@@ -24,7 +26,7 @@ const getByNameDb = async (name) => {
 }
 
 
-module.exports = {
+export {
     getByName,
     getByNameDb
 }

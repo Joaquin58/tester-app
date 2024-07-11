@@ -1,5 +1,9 @@
-const { Videogame, Genre } = require('../db')
-const updategame = require('../middlewares/putgame.js')
+import * as tables from "../db.js"
+import updategame from '../middlewares/putgame.js'
+
+const { Videogame } = tables.default
+
+
 const putgame = async (req, res) => {
     const { id } = req.params
     try {
@@ -11,9 +15,7 @@ const putgame = async (req, res) => {
             where: { id }
         }))
     } catch (error) {
-        console.log(error)
         res.status(404).json(error)
     }
 }
-
-module.exports = putgame
+export default putgame

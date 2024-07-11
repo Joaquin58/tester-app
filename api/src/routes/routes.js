@@ -1,16 +1,16 @@
-require('dotenv').config();
-const { Router } = require('express');
-const allgames = require('../controllers/getAllvideogames.js')
-const getById = require('../controllers/getById.js')
-const chargegenres = require('../controllers/chargegenres.js');
-const postgame = require('../controllers/postgame');
-const platforms = require('../controllers/platforms.js')
-const putgame = require('../controllers/putgame.js')
-const deletegame = require('../controllers/deletegame.js')
-const filtandorder = require('../controllers/filtandorder.js')
-const seccuential = require('../controllers/seccuential.js');
-const testenviroments = require("../controllers/testenvirometns.js")
-
+// require('dotenv').config();
+import * as env from "dotenv"
+env.config()
+import { Router } from 'express';
+import allgames  from '../controllers/getAllvideogames.js'
+import getById  from '../controllers/getById.js'
+import chargegenres  from '../controllers/chargegenres.js'
+import postgame  from '../controllers/postgame.js'
+import platforms  from '../controllers/platforms.js'
+import putgame  from '../controllers/putgame.js'
+import deletegame  from '../controllers/deletegame.js'
+import filtandorder  from '../controllers/filtandorder.js'
+import seccuential  from '../controllers/seccuential.js'
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -20,7 +20,6 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.get("/", testenviroments)
 
 router.get('/videogames', allgames)
 
@@ -40,4 +39,4 @@ router.post('/filtandorder', filtandorder)
 
 router.get('/seccuentialadvance', seccuential)
 
-module.exports = router;
+export default router;

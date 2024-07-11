@@ -1,6 +1,8 @@
-const { Genre } = require('../db')
-const prechargeGenres = require('../middlewares/prechargegenres.js')
-const chargegenres = async (req, res) => {
+import * as database from "../db.js"
+const { Genre } = database.default
+import prechargeGenres from '../middlewares/prechargegenres.js'
+
+async function chargegenres(req, res) {
     try {
         const hayalgo = await Genre.findAll()
         if (hayalgo.length === 0) {
@@ -13,4 +15,4 @@ const chargegenres = async (req, res) => {
     }
 }
 
-module.exports = chargegenres
+export default chargegenres

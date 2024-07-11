@@ -17,12 +17,11 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import server from "./src/app.js"
-// const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+import listen from './src/app.js';
+import { conn } from './src/db.js';
 
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, () => {
+  listen.listen(process.env.PORT, () => {
     console.log(`%s listening at ${process.env.PORT}`); // eslint-disable-line no-console
   });
 });

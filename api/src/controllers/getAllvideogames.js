@@ -1,8 +1,9 @@
 
-require('dotenv').config();
-const { traertodoBd } = require('../middlewares/allgames_DB.js')
-const { getByName, getByNameDb } = require('../middlewares/getByName');
-const parallel = require('../middlewares/allgames_API.js');
+import * as env from "dotenv"
+import traertodoBd from '../middlewares/allgames_DB.js';
+import { getByName, getByNameDb } from '../middlewares/getByName.js';
+import parallel from '../middlewares/allgames_API.js';
+env.config()
 
 const allgames = async (req, res) => {
     const { name } = req.query
@@ -24,9 +25,8 @@ const allgames = async (req, res) => {
             return res.status(200).json(resto)
         }
     } catch (error) {
-        console.log(error)
         res.status(500).json('error en allgames ' + error)
     }
 }
 
-module.exports = allgames
+export default allgames

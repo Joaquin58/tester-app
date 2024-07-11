@@ -1,4 +1,7 @@
-const { Videogame, Genre } = require('../db')
+import database from '../db.js'
+
+const { Videogame, Genre } = database
+
 const getGameById = async (id) => {
     let game = await Videogame.findByPk(id, {
         include: [{
@@ -11,5 +14,4 @@ const getGameById = async (id) => {
     })
     return game
 }
-
-module.exports = getGameById
+export default getGameById

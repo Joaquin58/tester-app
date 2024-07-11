@@ -1,4 +1,4 @@
-const { filterexist, filterbygenres, orderbyalfabet, filterexistbyname } = require('../middlewares/filterandorder.js')
+import { filterexist, filterbygenres, orderbyalfabet, filterexistbyname } from '../middlewares/filterandorder.js'
 const filtandorder = async (req, res) => {
     const { name, status, genres } = req.body
     try {
@@ -22,5 +22,4 @@ const filtandorder = async (req, res) => {
         return res.status(500).json
     }
 }
-
-module.exports = filtandorder
+export default filtandorder

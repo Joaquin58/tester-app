@@ -1,6 +1,7 @@
-const axios = require('axios')
+import axios from 'axios'
+import reducedata from './reducedata.js'
+
 const { API_KEY } = process.env
-const reducedata = require('./reducedata')
 const ENDPAPI1 = 'https://api.rawg.io/api/games?key='
 
 let pagesnums = [1, 2, 3, 4, 5]
@@ -8,8 +9,8 @@ let box = []
 async function getGamepage(numpage) {
     const { data: { results } } = await axios.get(`${ENDPAPI1}${API_KEY}&page=${numpage}`)
     return reducedata(results)
-
 }
+
 const parallel = async () => {
     if (!(box.length === 0)) return box
     const arr = await Promise.all(pagesnums.map(async (num) => getGamepage(num)))
@@ -35,4 +36,4 @@ function concat(array) {
     }
     return box
 }
-module.exports = parallel
+export default parallel

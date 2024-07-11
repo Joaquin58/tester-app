@@ -1,5 +1,7 @@
-const axios = require('axios')
+import axios from 'axios'
+
 const ENDPAPI5 = 'https://api.rawg.io/api/platforms'
+
 const { API_KEY } = process.env
 async function reducePlatfomr() {
 
@@ -23,4 +25,4 @@ async function reducePlatfomr() {
     return [...page1, ...page2]
 }
 
-module.exports = reducePlatfomr
+export default reducePlatfomr

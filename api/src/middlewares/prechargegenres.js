@@ -1,7 +1,11 @@
-const axios = require('axios')
-const { Genre } = require('../db')
+// const axios = require('axios')
+import axios from 'axios'
+import * as database from "../db.js"
+
 const ENDPAPI3 = 'https://api.rawg.io/api/genres'
 const { API_KEY } = process.env
+
+const Genre = database.default
 async function prechargeGenres() {
     try {
         const { data } = await axios.get(`${ENDPAPI3}?key=${API_KEY}`)
@@ -15,4 +19,4 @@ async function prechargeGenres() {
     }
 }
 
-module.exports = prechargeGenres
+export default prechargeGenres

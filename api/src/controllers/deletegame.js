@@ -1,4 +1,4 @@
-const destroygame = require('../middlewares/destroygame.js')
+import destroygame from '../middlewares/destroygame.js'
 const deletegame = async (req, res) => {
     const { id } = req.params
     try {
@@ -8,4 +8,4 @@ const deletegame = async (req, res) => {
         res.status(500).json(error)
     }
 }
-module.exports = deletegame
+export default deletegame
