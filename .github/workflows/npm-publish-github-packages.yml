@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Node.js Package
+name: Deploy
 
 on:
   push:
@@ -13,29 +13,39 @@ defaults:
   run:
    working-directory: ./api
   
+   
 jobs:
   deploy:
-    name: deploy
+    name: Deploy
     runs-on: ubuntu-latest
-    
+
     permissions:
       id-token: write # Needed for auth with Deno Deploy
       contents: read # Needed to clone the repository
       
     steps:
-      - name: Clone eepository
-        uses: actions/checkout@v4
-       
-      - name: install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-      - name: Install step
-        run: "npm install --omit=dev"
+    - name: Clone repository
+      uses: actions/checkout@v4 
+
+    - name: Install Deno
+      uses: denoland/setup-deno@v1
+      with:
+        deno-version: v1.x
         
-      - name: Build Step
-        run: npm run start
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          API_KEY: ${{secrets.API_KEY}}
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+          
+    - name: install step
+      run: npm i --omit=dev
+      
+    - run: |
+        touch .env 
+        echo "${{ secrets.PROD_ENV_FILE }}" > .env
+
+    - name: Upload to Deno Deploy
+      uses: denoland/deployctl@v1
+      with:
+          project: "joaquinramr-tester-app-40"
           
