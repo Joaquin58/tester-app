@@ -1,4 +1,4 @@
-import express from "../node_modules/express/index.js"
+import express from "../node_modules/express/lib/express.js"
 import cookieParser from '../node_modules/cookie-parser/index.js';
 import bodyParser from '../node_modules/cookie-parser/index.js'
 import morgan from '../node_modules/morgan/index.js'
