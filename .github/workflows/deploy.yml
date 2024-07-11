@@ -43,5 +43,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "joaquinramr-tester-app-40"
-          entrypoint: "./app.js"
+          entrypoint: "./index.js"
           root: "./api"
