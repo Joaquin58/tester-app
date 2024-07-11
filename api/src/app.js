@@ -1,7 +1,7 @@
-import express from "express"
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser'
-import morgan from 'morgan'
+import express from "../node_modules/express/index.js"
+import cookieParser from '../node_modules/cookie-parser/index.js';
+import bodyParser from '../node_modules/cookie-parser/index.js'
+import morgan from '../node_modules/morgan/index.js'
 import routes from './routes/routes.js'
 import compression from "../node_modules/compression/index.js"
 import "./db.js"
