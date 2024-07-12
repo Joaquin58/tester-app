@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'npm:axios'
 import reducedata from './reducedata.js'
 
 const ENDPAPI1 = 'https://api.rawg.io/api/games?key='
