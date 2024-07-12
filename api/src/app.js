@@ -1,4 +1,4 @@
-import express from "node:express@4"
+import express from "npm:express@4"
 import cookieParser from 'node:cookie-parser';
 import bodyParser from 'node:body-parser'
 import morgan from 'node:morgan'
