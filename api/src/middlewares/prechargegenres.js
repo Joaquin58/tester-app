@@ -1,5 +1,4 @@
-// const axios = require('axios')
-import axios from 'axios'
+import axios from 'npm:axios'
 import * as database from "../db.js"
 
 const ENDPAPI3 = 'https://api.rawg.io/api/genres'

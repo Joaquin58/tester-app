@@ -1,5 +1,5 @@
 import * as database from "../db.js"
-const { Genre } = database.default
+const { Genre } = database
 import prechargeGenres from '../middlewares/prechargegenres.js'
 
 async function chargegenres(req, res) {

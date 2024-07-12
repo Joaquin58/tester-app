@@ -1,5 +1,4 @@
-// require('dotenv').config();
-import * as env from "dotenv"
+import * as env from "npm:dotenv"
 env.config()
 import { Router } from 'npm:express@4';
 import allgames  from '../controllers/getAllvideogames.js'

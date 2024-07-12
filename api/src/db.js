@@ -1,7 +1,7 @@
 import * as env from "npm:dotenv"
 env.config()
 import { Sequelize } from 'npm:sequelize';
-import fs from 'fs';
+import fs from 'ndoe:fs';
 import { basename as _basename, dirname, join } from 'npm:path';
 import { fileURLToPath } from "npm:url"
 

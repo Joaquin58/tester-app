@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'npm:axios'
 import getGameById from '../middlewares/getGameById.js'
 import reducebyid from '../middlewares/reducebyid.js'
 

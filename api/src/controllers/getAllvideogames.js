@@ -1,5 +1,5 @@
 
-import * as env from "dotenv"
+import * as env from "npm:dotenv"
 import traertodoBd from '../middlewares/allgames_DB.js';
 import { getByName, getByNameDb } from '../middlewares/getByName.js';
 import parallel from '../middlewares/allgames_API.js';

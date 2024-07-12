@@ -1,5 +1,5 @@
 import axios from 'npm:axios'
-import { Op } from 'sequelize'
+import { Op } from 'npm:sequelize'
 import database from '../db.js'
 import reducedata from './reducedata.js'
 

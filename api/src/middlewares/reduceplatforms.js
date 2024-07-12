@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'npm:axios'
 
 const ENDPAPI5 = 'https://api.rawg.io/api/platforms'
 
