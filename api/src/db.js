@@ -2,7 +2,7 @@ import * as env from "npm:dotenv"
 env.config()
 import { Sequelize } from 'npm:sequelize';
 import fs from 'node:fs';
-import { basename as _basename, dirname, join } from 'npm:path';
+import { basename as _basename, dirname, join } from 'node:path';
 import { fileURLToPath } from "npm:url"
 
 const __filename = fileURLToPath(import.meta.url)
