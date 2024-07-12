@@ -1,13 +1,11 @@
-import { createRequire } from 'node_compat';
-const require = createRequire(import.meta.url);
-const express = require("express")
-import cookieParser from '../node_modules/cookie-parser/index.js';
-import bodyParser from '../node_modules/cookie-parser/index.js'
-import morgan from '../node_modules/morgan/index.js'
+import express from "node:express@4"
+import cookieParser from 'node:cookie-parser';
+import bodyParser from 'node:body-parser'
+import morgan from 'node:morgan'
+import compression from "node:compression"
+import cors from "node:cors"
 import routes from './routes/routes.js'
-import compression from "../node_modules/compression/index.js"
 import "./db.js"
-import cors from "../node_modules/cors/lib/index.js"
 
 const server = express();
 

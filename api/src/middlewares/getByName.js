@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'node:axios'
 import { Op } from 'sequelize'
 import database from '../db.js'
 import reducedata from './reducedata.js'

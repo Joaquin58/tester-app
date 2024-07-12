@@ -3,6 +3,7 @@ import { getByName, getByNameDb } from './getByName.js'
 import filter from './filtros.js'
 import orderbyname from './ordenamiento.js'
 import parallel from './allgames_API.js'
+
 const filterexist = async (status) => {
 
     return status === 'Exist'

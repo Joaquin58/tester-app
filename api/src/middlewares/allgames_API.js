@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'node:axios'
 import reducedata from './reducedata.js'
 
 const { API_KEY } = process.env
