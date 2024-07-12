@@ -36,6 +36,7 @@ jobs:
         run: npm i --omit=dev
           
       - run: |
+          pwd
           touch .env 
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
 
