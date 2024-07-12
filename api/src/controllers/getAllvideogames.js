@@ -2,8 +2,8 @@
 import * as env from "npm:dotenv"
 import traertodoBd from '../middlewares/allgames_DB.js';
 import { getByName, getByNameDb } from '../middlewares/getByName.js';
-import parallel from '../middlewares/allgames_API.js';
 env.config()
+import parallel from '../middlewares/allgames_API.js';
 
 const allgames = async (req, res) => {
     const { name } = req.query

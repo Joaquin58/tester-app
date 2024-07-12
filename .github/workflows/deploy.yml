@@ -38,8 +38,7 @@ jobs:
       - run: |
           touch .env 
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
-          ls -al
-          
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
