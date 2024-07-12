@@ -3,7 +3,7 @@ env.config()
 import { Sequelize } from 'npm:sequelize';
 import fs from 'node:fs';
 import { basename as _basename, dirname, join } from 'node:path';
-import { fileURLToPath } from "npm:url"
+import { fileURLToPath } from "node:url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
