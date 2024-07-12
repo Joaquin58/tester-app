@@ -1,9 +1,9 @@
 import express from "npm:express@4"
-import cookieParser from 'node:cookie-parser';
-import bodyParser from 'node:body-parser'
-import morgan from 'node:morgan'
-import compression from "node:compression"
-import cors from "node:cors"
+import cookieParser from 'npm:cookie-parser';
+import bodyParser from 'npm:body-parser'
+import morgan from 'npm:morgan'
+import compression from "npm:compression"
+import cors from "npm:cors"
 import routes from './routes/routes.js'
 import "./db.js"
 

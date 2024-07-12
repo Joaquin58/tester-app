@@ -1,4 +1,4 @@
-import { DataTypes } from 'node:sequelize';
+import { DataTypes } from 'npm:sequelize';
 export default (sequelize)=>{
     sequelize.define('Genre', {
         id: {

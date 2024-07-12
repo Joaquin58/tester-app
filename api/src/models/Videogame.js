@@ -1,4 +1,4 @@
-import { DataTypes } from 'node:sequelize';
+import { DataTypes } from 'npm:sequelize';
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 export default (sequelize) => {

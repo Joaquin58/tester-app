@@ -1,9 +1,9 @@
-import * as env from "node:dotenv"
+import * as env from "npm:dotenv"
 env.config()
-import { Sequelize } from 'node:sequelize';
+import { Sequelize } from 'npm:sequelize';
 import fs from 'fs';
-import { basename as _basename, dirname, join } from 'node:path';
-import { fileURLToPath } from "node:url"
+import { basename as _basename, dirname, join } from 'npm:path';
+import { fileURLToPath } from "npm:url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
