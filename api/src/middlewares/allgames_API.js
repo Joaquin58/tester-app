@@ -2,6 +2,7 @@ import axios from 'npm:axios'
 import reducedata from './reducedata.js'
 import * as env from "npm:dotenv"
 env.config()
+
 const { API_KEY } = process.env
 const ENDPAPI1 = 'https://api.rawg.io/api/games?key='
 
