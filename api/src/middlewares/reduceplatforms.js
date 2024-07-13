@@ -1,14 +1,12 @@
 import axios from 'npm:axios'
+import { config } from '../config/config.js'
 
 const ENDPAPI5 = 'https://api.rawg.io/api/platforms'
+const { API_KEY } = config.api
 
-const { API_KEY } = process.env
 async function reducePlatfomr() {
-
     const { data: { next, results } } = await axios.get(`${ENDPAPI5}?key=${API_KEY}`)
-    
     const { data: { results: platform } } = await axios.get(`${next}`)
-
     const page1 = results.map(({ id, name }) => {
         return {
             id,

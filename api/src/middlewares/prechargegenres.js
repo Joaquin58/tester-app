@@ -1,8 +1,9 @@
 import axios from 'npm:axios'
 import * as database from "../db.js"
+import { config } from '../config/config.js'
 
 const ENDPAPI3 = 'https://api.rawg.io/api/genres'
-const { API_KEY } = process.env
+const { API_KEY } = config.api
 
 const Genre = database.default
 async function prechargeGenres() {

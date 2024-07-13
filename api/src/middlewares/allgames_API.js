@@ -1,9 +1,8 @@
 import axios from 'npm:axios'
 import reducedata from './reducedata.js'
-import * as env from "npm:dotenv"
-env.config()
+import { config } from '../config/config.js'
 
-const { API_KEY } = process.env
+const { API_KEY } = config.api
 const ENDPAPI1 = 'https://api.rawg.io/api/games?key='
 
 let pagesnums = [1, 2, 3, 4, 5]

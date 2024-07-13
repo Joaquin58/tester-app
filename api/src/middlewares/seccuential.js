@@ -1,15 +1,15 @@
 import axios from 'npm:axios'
 import reducedata from './reducedata.js'
+import { config } from '../config/config.js'
 
 const ENDPAPI1 = 'https://api.rawg.io/api/games?key='
-const { API_KEY } = process.env
-
+const { API_KEY } = config.api
 let pagesnums = [1, 2, 3, 4, 5]
 let allgames = []
+
 async function getGamepage(numpage) {
     const { data: { results } } = await axios.get(`${ENDPAPI1}${API_KEY}&page=${numpage}`)
     return reducedata(results)
-
 }
 
 async function getallparallel() {
@@ -19,7 +19,7 @@ async function getallparallel() {
         const results = await getGamepage(num)
         allgames = [...allgames, ...results]
     }, Promise.resolve())
-    
+
     return allgames
 }
 async function secforloop() {
@@ -30,6 +30,7 @@ async function secforloop() {
     }
     return allgames
 }
+
 export {
     getallparallel,
     secforloop

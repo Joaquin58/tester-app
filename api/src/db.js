@@ -1,19 +1,19 @@
-import * as env from "npm:dotenv"
-env.config()
 import { Sequelize } from 'npm:sequelize';
 import fs from 'node:fs';
 import { basename as _basename, dirname, join } from 'node:path';
 import { fileURLToPath } from "node:url"
+import { config } from './config/config.js';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, ENDPOINT_ID
-} = process.env;
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV
+} = config.db;
 
+console.log(DB_USER)
 let sequelize =
-  process.env.NODE_ENV === "production"
+  NODE_ENV === "production"
     ? new Sequelize({
       database: DB_NAME,
       dialect: "postgres",

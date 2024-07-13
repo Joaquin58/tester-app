@@ -19,9 +19,11 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import listen from './src/app.js';
 import { conn } from './src/db.js';
+import { config } from './src/config/config.js';
+const { PORT }= config.api
 
 conn.sync({ force: true }).then(() => {
-  listen.listen(process.env.PORT, () => {
-    console.log(`%s listening at ${process.env.PORT}`); // eslint-disable-line no-console
+  listen.listen(PORT, () => {
+    console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });
 });
