@@ -8,7 +8,7 @@ export const config = {
     },
     api: {
         API_KEY: Deno.env.get('API_KEY'),
-        PORT: Deno.env.get('PORT'),
+        PORT: Deno.env.get('DENO_DEPLOYMENT_PORT') || Deno.env.get('PORT'),
         NDOE_ENV: Deno.env.get("NDOE_ENV")
     }
 }
