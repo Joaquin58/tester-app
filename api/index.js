@@ -17,13 +17,13 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import listen from './src/app.js';
+import server from './src/app.js';
 import { conn } from './src/db.js';
-import { config } from './src/config/config.js';
-const { PORT }= config.api
+
+const PORT = Deno.env.get("PORT")
 
 conn.sync({ force: true }).then(() => {
-  listen.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });
 });

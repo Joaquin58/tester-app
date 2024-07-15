@@ -1,5 +1,5 @@
-import database from '../db.js'
-const { Videogame } = database
+import * as database from '../db.js'
+const { Videogame } = database.default
 
 const destroygame = async (id) => {
     await Videogame.destroy({ where: { id } })

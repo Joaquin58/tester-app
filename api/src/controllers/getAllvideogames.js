@@ -8,7 +8,7 @@ const allgames = async (req, res) => {
     try {
         if (!name) {
             const allrequestApi = parallel()
-            const allrequestBd = traertodoBd()
+            const allrequestBd = await traertodoBd()
             Promise.all([allrequestBd, allrequestApi]).then(([response1, response2]) => {
                 
                 return res.status(200).json([...response1,...response2])

@@ -1,8 +1,7 @@
 import axios from 'npm:axios'
-import { config } from '../config/config.js'
 
 const ENDPAPI5 = 'https://api.rawg.io/api/platforms'
-const { API_KEY } = config.api
+const API_KEY = Deno.env.get("API_KEY")
 
 async function reducePlatfomr() {
     const { data: { next, results } } = await axios.get(`${ENDPAPI5}?key=${API_KEY}`)

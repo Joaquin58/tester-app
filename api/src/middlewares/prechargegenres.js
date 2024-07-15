@@ -1,11 +1,10 @@
 import axios from 'npm:axios'
-import * as database from "../db.js"
-import { config } from '../config/config.js'
+import database from "../db.js"
 
 const ENDPAPI3 = 'https://api.rawg.io/api/genres'
-const { API_KEY } = config.api
+const API_KEY = Deno.env.get("API_KEY")
 
-const Genre = database.default
+const { Genre } = database
 async function prechargeGenres() {
     try {
         const { data } = await axios.get(`${ENDPAPI3}?key=${API_KEY}`)

@@ -2,10 +2,10 @@ import axios from 'npm:axios'
 import { Op } from 'npm:sequelize'
 import database from '../db.js'
 import reducedata from './reducedata.js'
-import { config } from '../config/config.js'
+
 
 const { Videogame, Genre } = database
-const { API_KEY } = config.api
+const API_KEY = Deno.env.get("API_KEY")
 const ENDPAPI2 = 'https://api.rawg.io/api/games?search='
 
 const getByName = async (name) => {

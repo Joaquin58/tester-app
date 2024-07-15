@@ -1,17 +1,17 @@
+import { config } from 'npm:dotenv';
+config({ path: "./.env" })
 import { Sequelize } from 'npm:sequelize';
 import fs from 'node:fs';
 import { basename as _basename, dirname, join } from 'node:path';
 import { fileURLToPath } from "node:url"
-import { config } from './config/config.js';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV
-} = config.db;
+  DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, NODE_ENV
+} = Deno.env.toObject();
 
-console.log(DB_USER)
 let sequelize =
   NODE_ENV === "production"
     ? new Sequelize({

@@ -1,9 +1,8 @@
 import axios from 'npm:axios'
 import reducedata from './reducedata.js'
-import { config } from '../config/config.js'
 
 const ENDPAPI1 = 'https://api.rawg.io/api/games?key='
-const { API_KEY } = config.api
+const API_KEY = Deno.env.get("API_KEY")
 let pagesnums = [1, 2, 3, 4, 5]
 let allgames = []
 

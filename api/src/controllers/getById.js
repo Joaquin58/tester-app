@@ -1,10 +1,9 @@
 import axios from 'npm:axios'
 import getGameById from '../middlewares/getGameById.js'
 import reducebyid from '../middlewares/reducebyid.js'
-import { config } from '../config/config.js'
 
 const ENDPAPI4 = 'https://api.rawg.io/api/games/'
-const { API_KEY } = config.api
+const API_KEY = Deno.env.get("API_KEY")
 
 const getById = async (req, res) => {
     const { id } = req.params
