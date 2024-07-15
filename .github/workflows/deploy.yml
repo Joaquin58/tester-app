@@ -33,7 +33,9 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: npm i --omit=dev
+        run: | 
+          npm i --omit=dev
+          deno install --allow-net --allow-env pg
           
       - run: |
           touch .env 
