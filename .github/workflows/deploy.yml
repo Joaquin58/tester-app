@@ -4,10 +4,10 @@ on:
     branches: main
   pull_request:
     branches: main
-    
+
 defaults:
   run:
-   working-directory: ./api
+    working-directory: ./api
 
 jobs:
   deploy:
@@ -32,11 +32,13 @@ jobs:
         with:
           node-version: lts/*
 
+      - name: Install pg globally
+        run: |
+          deno install -g --root /usr/local/bin pg
+
       - name: Install step
-        run: | 
-          npm i --omit=dev
-          deno install -g pg
-          
+        run: npm i --omit=dev
+
       - run: |
           touch .env 
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
