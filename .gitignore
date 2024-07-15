@@ -111,3 +111,6 @@ package-lock.json
 # docker fly io
 .dockerignore
 Dockerfile
+
+# .vscode
+.vscode
