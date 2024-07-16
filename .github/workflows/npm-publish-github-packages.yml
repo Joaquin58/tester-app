@@ -38,7 +38,10 @@ jobs:
         node-version: lts/*
           
     - name: install step
-      run: npm i --omit=dev
+      run: |
+        npm i 
+        npm i -g pg 
+        npm i -g sequelize 
       
     - run: |
         touch .env 
