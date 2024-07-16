@@ -33,7 +33,7 @@ jobs:
           node-version: lts/*
 
       - name: Install pg globally
-        run: deno install -f -r -g https://deno.land/x/postgres@v0.14.1/mod.js
+        run: deno install -f -r -g https://deno.land/x/postgres@v0.19.3/mod.ts
 
       - name: Install step
         run: npm i
