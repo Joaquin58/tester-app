@@ -33,8 +33,7 @@ jobs:
           node-version: lts/*
 
       - name: Install pg globally
-        run: |
-          deno install -g --root /usr/local/bin pg
+        run: deno install --allow-net --allow-env -f -r 
 
       - name: Install step
         run: npm i --omit=dev
