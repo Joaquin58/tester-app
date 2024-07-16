@@ -22,7 +22,7 @@ import { conn } from './src/db.js';
 
 const PORT = Deno.env.get("PORT")
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(PORT, () => {
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });
