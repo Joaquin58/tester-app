@@ -33,9 +33,7 @@ jobs:
           node-version: lts/*
 
       - name: Install pg globally
-        run: |
-          deno install --allow-net --allow-env -f -r https://deno.land/x/postgres/mod.ts
-          npm i -g pg
+        run: deno install --allow-net --allow-env -f -r -g https://deno.land/x/pg@v0.6.1/mod.ts
 
       - name: Install step
         run: npm i --omit=dev
