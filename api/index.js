@@ -19,7 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import server from './src/app.js';
 import { conn } from './src/db.js';
-
+//prueba de push
 const PORT = Deno.env.get("PORT")
 
 conn.sync({ force: false }).then(() => {
